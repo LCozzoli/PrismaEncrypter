@@ -1,6 +1,6 @@
 # Prisma Encryption
 
-This package allow you to encrypt your models in Prisma
+This package allows you to encrypt your models in Prisma
 
 ## Installation
 
