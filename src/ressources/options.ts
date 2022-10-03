@@ -14,7 +14,7 @@ export class IEncrypterInfos {
   @IsOptional()
   @IsString()
   @Min(32)
-  key: string;
+  key?: string;
 
   @IsOptional()
   @IsString()
