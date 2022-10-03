@@ -14,26 +14,26 @@ export class IEncrypterInfos {
   @IsOptional()
   @IsString()
   @Min(32)
-  key?: string | undefined;
+  key?: string;
 
   @IsOptional()
   @IsString()
   @Length(16, 16)
-  iv?: string | undefined;
+  iv?: string;
 
   @IsOptional()
   @IsString()
-  algorithm?: string | undefined;
+  algorithm?: string;
 }
 
 export class IEncrypterModelInfos extends IEncrypterInfos {
   @IsOptional()
   @IsString()
-  ivField?: string | undefined;
+  ivField?: string;
 
   @IsOptional()
   @IsBoolean()
-  stripIvField?: boolean | undefined;
+  stripIvField?: boolean;
 }
 
 export class IEncrypterModel {
@@ -42,25 +42,25 @@ export class IEncrypterModel {
 
   @IsArray()
   @IsOptional()
-  fields?: string[] | undefined;
+  fields?: string[];
 
   @IsOptional()
   @Type(() => IEncrypterInfos)
-  local?: IEncrypterModelInfos | undefined;
+  local?: IEncrypterModelInfos;
 }
 
 export class IEncrypterOptions {
   @IsOptional()
   @IsBoolean()
-  logging?: boolean | undefined;
+  logging?: boolean;
 
   @IsOptional()
   @Type(() => IEncrypterInfos)
-  global?: IEncrypterInfos | undefined;
+  global?: IEncrypterInfos;
 
   @IsArray()
   @ValidateNested({ each: true })
   @ArrayMinSize(1)
   @Type(() => IEncrypterModel)
-  models?: IEncrypterModel[] | undefined;
+  models?: IEncrypterModel[];
 }

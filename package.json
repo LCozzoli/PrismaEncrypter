@@ -1,6 +1,6 @@
 {
   "name": "prisma-encrypter",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Encryption solution for Prisma",
   "main": "dist/index.js",
   "devDependencies": {
