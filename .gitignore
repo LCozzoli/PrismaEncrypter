@@ -5,3 +5,4 @@ dist
 prisma
 examples/simple/package-lock.json
 package-lock.json
+settings.json
