@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@prisma/client": "^4.2.1",
-    "prisma-encrypter": "^0.0.4",
+    "prisma-encrypter": "^0.0.5",
     "tslog": "^3.3.4"
   }
 }
