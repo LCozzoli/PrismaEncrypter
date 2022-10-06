@@ -1,9 +1,10 @@
 {
   "name": "prisma-encrypter",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Encryption solution for Prisma",
   "main": "dist/index.js",
   "devDependencies": {
+    "@types/jest": "^29.1.1",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
     "eslint": "^8.23.0",

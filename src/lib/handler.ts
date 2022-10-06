@@ -19,9 +19,9 @@ export class PrismaEncrypter {
   };
 
   rawEncrypt = (value: string, key?: string, iv?: string, algorithm?: string) =>
-    encrypt(value, key || this.global.key, iv, algorithm);
+    encrypt(value, key || this.global?.key, iv, algorithm);
   rawDecrypt = (value: string, key?: string, iv?: string, algorithm?: string) =>
-    decrypt(value, key || this.global.key, iv, algorithm);
+    decrypt(value, key || this.global?.key, iv, algorithm);
 
   setOptions(options: IEncrypterOptions | string) {
     if (typeof options === 'string') {
@@ -70,9 +70,9 @@ export class PrismaEncrypter {
         try {
           data[field] = this.crypter[method](
             data[field],
-            model?.local.key || this.global.key,
+            model?.local?.key || this.global?.key,
             ivKey,
-            model?.local.algorithm || this.global.algorithm
+            model?.local?.algorithm || this.global?.algorithm
           );
         } catch (err) {
           console.error(method, field, data[field], err?.message || err);
