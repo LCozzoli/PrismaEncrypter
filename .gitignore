@@ -2,7 +2,6 @@
 node_modules
 dist
 .vscode/settings.json
-prisma
 examples/simple/package-lock.json
 package-lock.json
 settings.json
