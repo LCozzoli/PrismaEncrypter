@@ -16,6 +16,17 @@ If you use **ivField** on a model, don't forget to include this field in your se
 key argument must be a **32-bits** key
 iv argument must be a **16-bits** key
 
+This supports include models, included fields has to include the name of the field, for example accounts -> Account.
+TODO: analyze prisma.schema to make a correspondance table.
+
+```
+model Item {
+  id              Int             @default(autoincrement()) @id
+  accountId       Int?
+  accounts        Account?        @relation(fields: [accountId], references: [id])
+}
+```
+
 ### Basic usage
 
 ```javascript

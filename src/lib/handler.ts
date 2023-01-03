@@ -8,6 +8,7 @@ import {
 } from '../ressources/options';
 import { encrypt, decrypt } from './crypter';
 import { EEncrypterErrors } from '../ressources/errors';
+import { isObject } from './utils';
 
 @singleton()
 export class PrismaEncrypter {
@@ -63,6 +64,13 @@ export class PrismaEncrypter {
       return data.map((d) => this.transformData(method, model, d));
     const ivKey = model ? this.getIVKey(model, data) : this.global.iv;
     for (const field in data) {
+      if (Array.isArray(data[field]) || isObject(data[field])) {
+        model = this.models.find((m) => field.includes(m.model.toLowerCase()));
+        data[field] = model
+          ? this.transformData(method, model, data[field])
+          : data[field];
+        continue;
+      } else if (this.models?.length && !model) continue;
       if (
         typeof data[field] == 'string' &&
         (!model?.fields.length || model?.fields.includes(field))
@@ -95,8 +103,6 @@ export class PrismaEncrypter {
       ? this.models.find((m) => m.model === params.model)
       : null;
 
-    if (this.models?.length && !model) return next(params);
-
     if (EMethodsToEncrypt[params.action]) {
       if (params?.args)
         for (const arg in params.args) {
@@ -109,6 +115,7 @@ export class PrismaEncrypter {
     }
 
     const result = await next(params);
+
     if (EMethodsToDecrypt[params.action] && result) {
       try {
         let decrypted = this.transformData('decrypt', model, result);
