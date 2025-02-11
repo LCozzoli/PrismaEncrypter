@@ -1,24 +1,24 @@
 {
   "name": "prisma-encrypter",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Lightweight encryption solution for Prisma",
   "main": "dist/index.js",
   "devDependencies": {
-    "@types/jest": "^29.1.1",
-    "@typescript-eslint/eslint-plugin": "^5.36.1",
-    "@typescript-eslint/parser": "^5.36.1",
-    "eslint": "^8.23.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.7.1",
-    "ts-node": "^10.9.1",
-    "tsc-watch": "^5.0.3"
+    "@types/jest": "^29.5.14",
+    "@typescript-eslint/eslint-plugin": "^8.24.0",
+    "@typescript-eslint/parser": "^8.24.0",
+    "eslint": "^9.20.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "prettier": "^3.5.0",
+    "ts-node": "^10.9.2",
+    "tsc-watch": "^6.2.1"
   },
   "dependencies": {
     "class-transformer": "^0.5.1",
-    "class-validator": "^0.13.2",
-    "reflect-metadata": "^0.1.13",
-    "tsyringe": "^4.7.0"
+    "class-validator": "^0.14.1",
+    "reflect-metadata": "^0.2.2",
+    "tsyringe": "^4.8.0"
   },
   "scripts": {
     "start": "tsc && node dist/index.js",
