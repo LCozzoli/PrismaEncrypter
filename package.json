@@ -1,6 +1,6 @@
 {
   "name": "prisma-encrypter",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Lightweight encryption solution for Prisma",
   "main": "dist/index.js",
   "devDependencies": {
@@ -21,6 +21,7 @@
     "tsyringe": "^4.8.0"
   },
   "scripts": {
+    "build": "tsc -p tsconfig.json",
     "start": "tsc && node dist/index.js",
     "dev": "tsc-watch --onSuccess \"ts-node src/index.ts\"",
     "lint": "eslint .",
